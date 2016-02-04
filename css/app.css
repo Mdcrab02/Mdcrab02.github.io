@@ -1,0 +1,37 @@
+
+.store{
+  max-width: 500px;
+}
+
+.thumbnails{
+    width: 180px;
+    margin:0 auto;
+}
+
+.small-image{
+    width:50px;
+}
+
+.selected{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.thumbnails li{
+    padding: 7.5px;
+}
+.thumbnails li:first-child{
+    padding-left: 0;
+}
+
+.thumbnails li:last-child{
+    padding-right: 0;
+}
+.ng-invalid.ng-dirty{
+  border-color:red;
+}
+
+.ng-valid.ng-dirty{
+  border-color:green;
+}
