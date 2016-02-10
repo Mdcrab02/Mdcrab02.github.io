@@ -1,0 +1,29 @@
+
+<div>
+<h1>Angular Tutorials</h1>
+	<p>Browse the Angular Tutorials below.  Click on the Accordion section to expand it!</p>
+
+    <script type="text/ng-template" id="group-template.html">
+      <div class="panel {{panelClass || 'panel-default'}}">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="color:#fa39c3">
+          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
+            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
+        </h4>
+        </div>
+        <div class="panel-collapse collapse" uib-collapse="!isOpen">
+          <div class="panel-body" style="text-align: right" ng-transclude></div>
+        </div>
+      </div>
+    </script>
+
+    <uib-accordion close-others="oneAtATime">
+      <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+        <ul style="list-style-type:none">
+		<li>Author: {{group.author}}</li>
+		<li><img src={{group.image}}></img></li>
+		<li><a href={{group.url}}>{{group.url}}</a></li>
+		</ul>
+      </uib-accordion-group>
+</div>
+

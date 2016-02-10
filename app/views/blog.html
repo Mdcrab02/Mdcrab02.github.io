@@ -1,0 +1,77 @@
+<div>
+	<h1>Blog Page</h1>
+	<p>AngularJS is a Javascript library that allows you to do many cool things in web apps.<p>
+	<p>For part one (and part two) of this tutorial, I used Yeoman to scaffold the app and then
+		brought in all of the libraries I needed to create the rest of the content.</p>
+</div>
+
+<div class="row">
+	<div class="col-md-8">Big column</div>
+	<div class="col-md-4">Small column</div>
+</div>
+
+<div class="well well-sm">A code snippet can go here.</div>
+
+<div>
+	<h3>Step 1</h3>
+	<p>The first step I took to making part one of the assignment is creating the app with Yeoman.
+		I started by completing the tutorial found <a href="http://yeoman.io/codelab/meet-yeoman.html">here.</a></p>
+	<p>Go through the entire tutorial and keep in mind how angular functions behind the scenes.</p>	
+	<p><span class="label label-danger">Note:</span>During the Yeoman tutorial it will have you run your
+		unit tests on your code.  You may encounter an error where the test does not find Karma in your app
+		and will cause all tests to fail.  To remedy this: stop your server, and enter the following into
+		the command prompt:</p>
+	<div class="well well-sm">npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt --save-dev</div>
+		<p><span class="label label-warning">Warning:</span>Some Antivirus programs will identify PhantomJS.exe
+			as generic malware.  As of right now, I do not know that this is a false positive, but I'm sure it probably is.
+			If this happens to you, you will need to disable your antivirus, rerun the above code, and then run your tests.
+			Otherwise, you will not be able to run your full suite of unit tests.</p>	
+</div>
+
+<div>
+	<h3>Step 2</h3>
+	<p>The next step is to set up the project for your homework.  Navigate to your workspace with command prompt and create 
+		a directory for your project.</p>
+	<div class="well well-sm">mkdir project_dir_name && cd project_dir_name</div>
+	<p>Once you're in your new directory, have Yeoman scaffold your angular app with the following code:</p>
+	<div class="well well-sm">yo angular</div>	
+	<p>Once Yeoman finishes running, start up your app using Grunt just like you did in the tutorial with:</p>
+	<div class="well well-sm">grunt serve</div>
+	<p>This should be the same starting point from the Yeoman tutorial before you started to add the todo list.</p>	
+</div>
+
+<div>
+	<h3>Step 3</h3>
+	<p>Next you can add a new section to your navigation bar.  The new code for my navbar looks like this:</p
+	<p><img src="images/ss1.png" alt="I'm Yeoman"></p>
+	<p>Now that the text is in the navbar, you need to add a new section in app.js like the following:</p>
+	<p><img src="images/ss2.png" alt="I'm Yeoman"></p>
+	<p>This tells the javascript behind the navbar (Angular) what to do when you click one of the new links for your new pages.</p>	
+	<p>In my example, the tutorials and blog sections are new, so they each need an HTML section under views.</p>
+	<p><img src="images/ss3.png" alt="I'm Yeoman"></p>
+	<p>This should be the same starting point from the Yeoman tutorial before you started to add the todo list.</p>	
+</div>
+
+<div>
+	<h3>Step 4</h3>
+	<p>Once you've added some HTML sections with whatever you want in each part, you need to grab the JSON data Wes has on Github.<p>
+		<p><span class="label label-danger">Note:</span>Wes' raw JSON data contains double quotes for the key and value within the data,
+			and not only is this not standard it makes Yeoman yell at you.  Use your IDE to change all of the double quotes to single
+			quotes.</p>
+	<p>What I ended up doing is copying this into the angular controller I have associated with my Tutorials section.  Here is a look
+		at what I ended up doing:</p
+	<p><img src="images/ss4.png" alt="I'm Yeoman"></p>
+	<p>Now let's take a look at what is going on here.  I have the data all dropped into $groups.  This establishes a place in Angular
+		where all of this data can be grabbed all at once.  In my example, I have an ng-repeat that goes over each JSON group in $groups
+		to populate an Angular-ui accordion.  The HTML for the accordion looks a little like this:</p>
+	<p><img src="images/ss5.png" alt="I'm Yeoman"></p>
+	<p>Here Angular is looping over each group in $groups and populating each section with the associated JSON data.  For example, the
+		Angular expression {{group.author}} will grab the data from $groups.author found in the JSON data in my controller.  The dot notation
+		should be familar to most people coming from .net development.</p>	
+</div>
+
+<div>
+	<h3>Conclusion</h3>
+	<p>I hope this tutorial helps.  I am not a web development pro or anything which means that my applications usually work correctly,
+		but I am not so great at explaining things very well.</p>	
+</div>

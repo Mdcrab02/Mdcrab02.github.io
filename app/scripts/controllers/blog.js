@@ -1,0 +1,13 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name cis411Hw5App.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the cis411Hw5App
+ */
+angular.module('cis411Hw5App')
+  .controller('BlogCtrl', function () {
+
+  });
